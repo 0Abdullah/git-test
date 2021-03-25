@@ -4,10 +4,54 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="app.js" defer></script>
+    <title>Reverse string</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,200&display=swap");
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        font-family: "Poppins", sans-serif;
+      }
+
+      #input {
+        width: 30vw;
+        height: 5vw;
+        border-radius: 10px;
+        border: 1px gray solid;
+        outline: none;
+        padding: 2rem 1rem;
+        font-size: 2rem;
+        font-family: inherit;
+        text-align: center;
+      }
+
+      #output {
+        font-size: 5rem;
+        margin-top: 5vh;
+      }
+    </style>
   </head>
   <body>
-    <h1>git demo page</h1>
+    <input oninput="reverse()" type="text" id="input" />
+    <div id="output">Reverse a string</div>
+    <script>
+      input = document.getElementById("input");
+      output = document.getElementById("output");
+      function reverse() {
+        if (input.value) {
+          output.textContent = input.value.split("").reverse().join("");
+        } else {
+          output.textContent = "Enter a string";
+        }
+      }
+    </script>
   </body>
 </html>
